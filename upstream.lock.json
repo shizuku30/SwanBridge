@@ -1,0 +1,30 @@
+{
+  "strongswan": {
+    "version": "6.1.0",
+    "repository": "https://github.com/strongswan/strongswan.git",
+    "tagCommit": "902116b4d27d7bafbefaf13dd38b55c9f5acc73e",
+    "archive": "https://download.strongswan.org/strongswan-6.1.0.tar.gz",
+    "sha256": "d9484eea319481bda86f992fa69cbdbdd9c0d6f8b9a4bd793a7df45c0760d963",
+    "license": "GPL-2.0-or-later; inspect individual source headers",
+    "verification": "SHA-256 and upstream detached OpenPGP signature verified; signing key 948F158A4E76A27BF3D07532DF42C170B34DBA77 from the official download page."
+  },
+  "msys2Base": {
+    "version": "20260927",
+    "archive": "https://repo.msys2.org/distrib/x86_64/msys2-base-x86_64-20260927.tar.xz",
+    "sha256": "ea2f31a0b6ade63914ce441ffb022f0f6aa96982bfefa2326460a26d5fb01322",
+    "verification": "Matches the digest on the official msys2/msys2-installer GitHub release asset for 2026-09-27."
+  },
+  "testRuntime": {
+    "package": "Microsoft.VCRTForwarders.140",
+    "version": "1.1.0",
+    "archive": "https://api.nuget.org/v3-flatcontainer/microsoft.vcrtforwarders.140/1.1.0/microsoft.vcrtforwarders.140.1.1.0.nupkg",
+    "sha256": "681d3a68a32ef866828f9e795e8ecd0cac0e79184ede54839461158f7f67a5bd",
+    "scope": "Desktop offline test processes only. Never copied into the MSIX or committed."
+  },
+  "windowsApiReference": {
+    "repository": "https://github.com/microsoft/UwpVpnPluginSample.git",
+    "commit": "d589fe0f57af13e052c44c662ade5fb1da2bcbb0",
+    "license": "MIT",
+    "use": "API reference only; not a linked or vendored dependency"
+  }
+}

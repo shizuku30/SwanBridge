@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  windows:
+    name: Windows x64 native engine and MSIX
+    runs-on: windows-2022
+    timeout-minutes: 45
+    defaults:
+      run:
+        shell: powershell
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+      - name: Check publication hygiene
+        run: |
+          ./scripts/Test-RepositoryHygiene.ps1
+          ./tests/NativeBuildProcessTests.ps1
+      - name: Set up workspace-local MSYS2
+        uses: msys2/setup-msys2@ec48f7c5447b3140e2b088413ae3a55687bccb6e # v2
+        with:
+          location: ${{ github.workspace }}\tools
+          msystem: MINGW64
+          path-type: minimal
+          update: true
+          cache: false
+          install: >-
+            make
+            mingw-w64-x86_64-gcc
+            mingw-w64-x86_64-openssl
+            mingw-w64-x86_64-pkgconf
+            mingw-w64-x86_64-python
+      - name: Fetch verified source and isolated test runtime
+        run: |
+          $ErrorActionPreference = 'Stop'
+          New-Item -ItemType Directory -Force build/ci | Out-Null
+          ./scripts/Fetch-Upstream.ps1
+          ./scripts/Initialize-TestRuntime.ps1
+          if (!(Test-Path tools/msys64/usr/bin/bash.exe)) { throw 'MSYS2 must be installed under the workspace tools directory.' }
+      - name: Build engine and run offline native regressions
+        run: |
+          ./scripts/Build-Core.ps1 *> build/ci/native.log
+          if ($LASTEXITCODE) { throw 'Native build or tests failed; inspect the CI log artifact.' }
+      - name: Build and test production and acceptance configurations
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $runtime = 'build/test-runtime/package/runtimes/win-x64/native/release'
+          ./scripts/Build.ps1 -TestRuntimeDirectory $runtime *> build/ci/production.log
+          ./scripts/Build.ps1 -AcceptanceHooks -TestRuntimeDirectory $runtime *> build/ci/acceptance.log
+          ./tests/RepositoryHygieneTests.ps1 *> build/ci/hygiene-tests.log
+          ./tests/NativeBuildProcessTests.ps1 *> build/ci/native-process-tests.log
+          ./tests/PublicationTests.ps1 -CheckLayout *> build/ci/publication-tests.log
+          ./scripts/Test-RepositoryHygiene.ps1
+      - name: Upload offline test logs only
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: windows-x64-test-logs
+          path: build/ci/*.log
+          if-no-files-found: ignore
+          retention-days: 14

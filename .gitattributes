@@ -1,0 +1,10 @@
+* text=auto eol=lf
+*.png binary
+*.ico binary
+*.patch text eol=lf -whitespace
+*.sh text eol=lf
+
+# Exclude PowerShell tooling from repository language statistics.
+*.ps1 -linguist-detectable
+*.psm1 -linguist-detectable
+*.psd1 -linguist-detectable

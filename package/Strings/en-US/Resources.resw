@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <data name="UI_ShowHelp" xml:space="preserve"><value>Show help</value></data>
+  <data name="UI_HelpSuffix" xml:space="preserve"><value>: help</value></data>
+  <data name="UI_InvalidChoice" xml:space="preserve"><value>Select a valid configuration value.</value></data>
+  <data name="UI_InvalidOption" xml:space="preserve"><value>Invalid option value.</value></data>
+  <data name="UI_CustomValue" xml:space="preserve"><value>Custom: </value></data>
+  <data name="UI_IdentityType" xml:space="preserve"><value>Identity type</value></data>
+  <data name="UI_IdentityName" xml:space="preserve"><value>FQDN / name</value></data>
+  <data name="UI_IdentityIpv4" xml:space="preserve"><value>IPv4 address</value></data>
+  <data name="UI_LocalIdentity" xml:space="preserve"><value>Client identity (Local ID)</value></data>
+  <data name="UI_RemoteIdentity" xml:space="preserve"><value>Server identity (Remote ID)</value></data>
+  <data name="UI_LocalIdentityHelp" xml:space="preserve"><value>Match the server's client-identity policy. Enter the original name without @ for a name identity. The PSK is a separate value.</value></data>
+  <data name="UI_RemoteIdentityHelp" xml:space="preserve"><value>The expected server IKE identity can differ from its public address. Match the server configuration and select the actual identity type.</value></data>
+  <data name="UI_ConnectionList" xml:space="preserve"><value>Connection list</value></data>
+  <data name="UI_WindowsSettings" xml:space="preserve"><value>Windows VPN settings</value></data>
+  <data name="UI_Connections" xml:space="preserve"><value>Connections</value></data>
+  <data name="UI_NewConnection" xml:space="preserve"><value>New connection</value></data>
+  <data name="UI_RefreshConnections" xml:space="preserve"><value>Refresh connections</value></data>
+  <data name="UI_ProviderScope" xml:space="preserve"><value>SwanBridge connections</value></data>
+  <data name="UI_Basic" xml:space="preserve"><value>Basic</value></data>
+  <data name="UI_BasicTitle" xml:space="preserve"><value>Connection and identity</value></data>
+  <data name="UI_BasicDescription" xml:space="preserve"><value>The server address establishes the network connection. IKE identities authenticate the peers; they can differ from that address.</value></data>
+  <data name="UI_ConnectionName" xml:space="preserve"><value>Connection name</value></data>
+  <data name="UI_ServerAddress" xml:space="preserve"><value>Server address</value></data>
+  <data name="UI_ServerHelp" xml:space="preserve"><value>Enter a hostname or IPv4 address without a scheme, path or port. Only mutual IKEv2 PSK authentication is supported.</value></data>
+  <data name="UI_Psk" xml:space="preserve"><value>Pre-shared key (PSK)</value></data>
+  <data name="UI_PskProtected" xml:space="preserve"><value>The key is encrypted using data protection for the current Windows user.</value></data>
+  <data name="UI_Security" xml:space="preserve"><value>Security</value></data>
+  <data name="UI_SecurityTitle" xml:space="preserve"><value>IKE and IPsec</value></data>
+  <data name="UI_SecurityDescription" xml:space="preserve"><value>Proposals must overlap with the server's algorithms. Changing them does not necessarily improve compatibility. Start with the tested defaults.</value></data>
+  <data name="UI_IkeProposal" xml:space="preserve"><value>IKE proposal</value></data>
+  <data name="UI_IkeRecommended" xml:space="preserve"><value>AES-256 / SHA-256 / DH14 (recommended)</value></data>
+  <data name="UI_IkeHelp" xml:space="preserve"><value>DH14 uses 2048 bits; DH15 uses 3072 bits. Only supported combinations are offered, with no fallback to 3DES or SHA-1.</value></data>
+  <data name="UI_EspProposal" xml:space="preserve"><value>ESP proposal</value></data>
+  <data name="UI_EspRecommended" xml:space="preserve"><value>AES-256 / SHA-256 (recommended)</value></data>
+  <data name="UI_EspHelp" xml:space="preserve"><value>ESP encrypts and integrity-protects application traffic. No additional Child SA DH/PFS group is configured.</value></data>
+  <data name="UI_Fragmentation" xml:space="preserve"><value>IKE fragmentation</value></data>
+  <data name="UI_EnabledRecommended" xml:space="preserve"><value>Enabled (recommended)</value></data>
+  <data name="UI_Disabled" xml:space="preserve"><value>Disabled</value></data>
+  <data name="UI_FragmentationHelp" xml:space="preserve"><value>Split large IKE messages when both peers support it, reducing failures caused by NAT devices or firewalls dropping IP fragments.</value></data>
+  <data name="UI_Encapsulation" xml:space="preserve"><value>ESP encapsulation</value></data>
+  <data name="UI_ForcedUdp" xml:space="preserve"><value>Forced UDP / NAT-T</value></data>
+  <data name="UI_EncapsulationHelp" xml:space="preserve"><value>The Windows data channel supports UDP encapsulation only. Bare ESP is unavailable and cannot be enabled with a profile option.</value></data>
+  <data name="UI_MobikeDisabled" xml:space="preserve"><value>Disabled (existing behavior)</value></data>
+  <data name="UI_MobikeEnabled" xml:space="preserve"><value>Enabled (server support required)</value></data>
+  <data name="UI_MobikeHelp" xml:space="preserve"><value>When negotiated by both peers, IPv4 network changes update the existing IKE/Child SAs and UDP path while retaining the virtual address. This is not redial. Enable MOBIKE on the server and keep the same gateway reachable.</value></data>
+  <data name="UI_LifetimeTitle" xml:space="preserve"><value>Liveness and timeouts</value></data>
+  <data name="UI_LifetimeDescription" xml:space="preserve"><value>These are local policies, not a copy of the server settings. DPD, NAT keepalives and retransmissions serve different purposes.</value></data>
+  <data name="UI_Dpd" xml:space="preserve"><value>DPD idle interval</value></data>
+  <data name="UI_Seconds20Recommended" xml:space="preserve"><value>20 seconds (recommended)</value></data>
+  <data name="UI_Seconds10" xml:space="preserve"><value>10 seconds</value></data>
+  <data name="UI_Seconds30" xml:space="preserve"><value>30 seconds</value></data>
+  <data name="UI_Seconds60" xml:space="preserve"><value>60 seconds</value></data>
+  <data name="UI_DisableProbing" xml:space="preserve"><value>Disable active probing</value></data>
+  <data name="UI_DpdHelp" xml:space="preserve"><value>Probe only while no peer IKE/ESP traffic is arriving. Disabling probes can delay detection of an unreachable peer.</value></data>
+  <data name="UI_KeepAlive" xml:space="preserve"><value>NAT keepalive interval</value></data>
+  <data name="UI_Seconds15Recommended" xml:space="preserve"><value>15 seconds (recommended)</value></data>
+  <data name="UI_Seconds20" xml:space="preserve"><value>20 seconds</value></data>
+  <data name="UI_KeepAliveHelp" xml:space="preserve"><value>Keep the NAT UDP mapping alive; this does not prove peer liveness. Long intervals can lose the mapping; short intervals increase idle traffic.</value></data>
+  <data name="UI_RetransmitTimeout" xml:space="preserve"><value>Initial retransmission timeout</value></data>
+  <data name="UI_Seconds1Default" xml:space="preserve"><value>1 second (default)</value></data>
+  <data name="UI_Seconds2" xml:space="preserve"><value>2 seconds</value></data>
+  <data name="UI_Seconds3" xml:space="preserve"><value>3 seconds</value></data>
+  <data name="UI_Seconds5Latency" xml:space="preserve"><value>5 seconds (high latency)</value></data>
+  <data name="UI_RetransmitTimeoutHelp" xml:space="preserve"><value>strongSwan applies backoff to later retransmissions. Subsequent retries do not all use this initial interval.</value></data>
+  <data name="UI_RetransmitTries" xml:space="preserve"><value>Message retransmissions</value></data>
+  <data name="UI_Tries3Default" xml:space="preserve"><value>3 attempts (default)</value></data>
+  <data name="UI_Tries4" xml:space="preserve"><value>4 attempts</value></data>
+  <data name="UI_Tries5" xml:space="preserve"><value>5 attempts</value></data>
+  <data name="UI_Tries6" xml:space="preserve"><value>6 attempts</value></data>
+  <data name="UI_Tries8" xml:space="preserve"><value>8 attempts</value></data>
+  <data name="UI_RetransmitTriesHelp" xml:space="preserve"><value>A request fails after the retry limit. Start with 3. More retries can tolerate packet loss but also delay failure detection.</value></data>
+  <data name="UI_KeyingTries" xml:space="preserve"><value>IKE initiation attempts</value></data>
+  <data name="UI_Tries1Default" xml:space="preserve"><value>1 attempt (default)</value></data>
+  <data name="UI_Tries2" xml:space="preserve"><value>2 attempts</value></data>
+  <data name="UI_Tries3" xml:space="preserve"><value>3 attempts</value></data>
+  <data name="UI_KeyingTriesHelp" xml:space="preserve"><value>IKE initiation attempts are also bounded by the negotiation timeout below. This does not enable automatic Windows redial.</value></data>
+  <data name="UI_ConnectTimeout" xml:space="preserve"><value>IKE negotiation timeout</value></data>
+  <data name="UI_Seconds25Default" xml:space="preserve"><value>25 seconds (default)</value></data>
+  <data name="UI_Seconds90" xml:space="preserve"><value>90 seconds</value></data>
+  <data name="UI_Seconds120" xml:space="preserve"><value>120 seconds</value></data>
+  <data name="UI_ConnectTimeoutHelp" xml:space="preserve"><value>Bound one IKE negotiation. Hostname resolution and credential reads before negotiation are not included.</value></data>
+  <data name="UI_ChildLifetime" xml:space="preserve"><value>Child SA hard lifetime</value></data>
+  <data name="UI_Hours24Compatible" xml:space="preserve"><value>24 hours (compatible default)</value></data>
+  <data name="UI_Hours1" xml:space="preserve"><value>1 hour</value></data>
+  <data name="UI_Hours4" xml:space="preserve"><value>4 hours</value></data>
+  <data name="UI_Hours8" xml:space="preserve"><value>8 hours</value></data>
+  <data name="UI_Hours48" xml:space="preserve"><value>48 hours</value></data>
+  <data name="UI_ChildLifetimeHelp" xml:space="preserve"><value>The maximum lifetime of an ESP key. Proactive rekey negotiates a replacement beforehand. An expired key cannot remain in use after rekey failure.</value></data>
+  <data name="UI_IkeRekey" xml:space="preserve"><value>Proactive IKE SA rekey</value></data>
+  <data name="UI_Hours4Recommended" xml:space="preserve"><value>4 hours (recommended)</value></data>
+  <data name="UI_Hours24" xml:space="preserve"><value>24 hours</value></data>
+  <data name="UI_DisableInitiation" xml:space="preserve"><value>Disable proactive initiation</value></data>
+  <data name="UI_IkeRekeyHelp" xml:space="preserve"><value>Use CREATE_CHILD_SA to replace IKE keys while retaining Child SAs, without reauthentication or redial. Disabling initiation still permits server-initiated rekeys. Proactive reauthentication is not enabled.</value></data>
+  <data name="UI_ChildRekey" xml:space="preserve"><value>Proactive Child SA rekey</value></data>
+  <data name="UI_Lifetime90Recommended" xml:space="preserve"><value>90% of hard lifetime (recommended)</value></data>
+  <data name="UI_Lifetime80" xml:space="preserve"><value>80% of hard lifetime</value></data>
+  <data name="UI_Lifetime95" xml:space="preserve"><value>95% of hard lifetime</value></data>
+  <data name="UI_ChildRekeyHelp" xml:space="preserve"><value>With the default 24-hour hard lifetime, replace ESP keys before about 21.6 hours. Rekey retains the virtual address, Windows channel and routes; the old SA is removed after replacement keys are installed.</value></data>
+  <data name="UI_RekeyJitter" xml:space="preserve"><value>Random rekey advance</value></data>
+  <data name="UI_Jitter5Recommended" xml:space="preserve"><value>Up to 5% earlier (recommended)</value></data>
+  <data name="UI_Jitter10" xml:space="preserve"><value>Up to 10% earlier</value></data>
+  <data name="UI_Jitter20" xml:space="preserve"><value>Up to 20% earlier</value></data>
+  <data name="UI_JitterNone" xml:space="preserve"><value>No random advance</value></data>
+  <data name="UI_RekeyJitterHelp" xml:space="preserve"><value>Subtract a random proportion from the rekey time to reduce simultaneous rekeys. This advances rekey; it never delays it beyond the hard lifetime.</value></data>
+  <data name="UI_Network" xml:space="preserve"><value>Network</value></data>
+  <data name="UI_NetworkTitle" xml:space="preserve"><value>Tunnel and routing</value></data>
+  <data name="UI_NetworkDescription" xml:space="preserve"><value>The tunnel carries IPv4 only. Full-tunnel mode drops public IPv6; split mode leaves unrelated IPv6 outside the VPN. There is no system-wide kill switch.</value></data>
+  <data name="UI_NatPort" xml:space="preserve"><value>Server NAT-T UDP port</value></data>
+  <data name="UI_NatPortHelp" xml:space="preserve"><value>The standard value is 4500. Change it only if the server explicitly listens on a custom UDP port.</value></data>
+  <data name="UI_Mtu" xml:space="preserve"><value>Tunnel MTU</value></data>
+  <data name="UI_MtuHelp" xml:space="preserve"><value>Recommended: 1280. Valid range: 576-1400. A smaller value can help with fragmentation or path-MTU problems.</value></data>
+  <data name="UI_RouteMode" xml:space="preserve"><value>IPv4 routing mode</value></data>
+  <data name="UI_FullTunnel" xml:space="preserve"><value>Full tunnel (default)</value></data>
+  <data name="UI_SplitTunnel" xml:space="preserve"><value>Selected networks (split tunnel)</value></data>
+  <data name="UI_SplitRoutes" xml:space="preserve"><value>Networks routed through VPN</value></data>
+  <data name="UI_SplitRoutesHelp" xml:space="preserve"><value>In split mode, enter canonical IPv4 CIDRs, one per line, up to 32. The server's traffic selectors must also permit those networks.</value></data>
+  <data name="UI_ExcludeLocal" xml:space="preserve"><value>Exclude local subnets</value></data>
+  <data name="UI_Excluded" xml:space="preserve"><value>Excluded</value></data>
+  <data name="UI_NotExcluded" xml:space="preserve"><value>Not excluded</value></data>
+  <data name="UI_ExcludeLocalHelp" xml:space="preserve"><value>Local LANs are excluded by default. Check route precedence when local and remote networks overlap. Disabling this exclusion does not resolve every address conflict.</value></data>
+  <data name="UI_DnsMode" xml:space="preserve"><value>DNS source</value></data>
+  <data name="UI_ServerDns" xml:space="preserve"><value>Server-supplied (recommended)</value></data>
+  <data name="UI_CustomIpv4Dns" xml:space="preserve"><value>Custom IPv4 DNS</value></data>
+  <data name="UI_SystemDns" xml:space="preserve"><value>Use system DNS</value></data>
+  <data name="UI_DnsModeHelp" xml:space="preserve"><value>Use the server's DNS by default, or the custom IPv4 servers below. System DNS can send queries outside the VPN.</value></data>
+  <data name="UI_CustomDns" xml:space="preserve"><value>Custom DNS servers</value></data>
+  <data name="UI_CustomDnsHelp" xml:space="preserve"><value>Enter up to four IPv4 addresses separated by commas or spaces. Split mode adds tunnel host routes for configured DNS servers. System DNS can send queries outside the VPN.</value></data>
+  <data name="UI_CreateConnection" xml:space="preserve"><value>Create VPN</value></data>
+  <data name="UI_ResetDefaults" xml:space="preserve"><value>Reset defaults</value></data>
+  <data name="UI_LoadingConnections" xml:space="preserve"><value>Loading connections...</value></data>
+  <data name="UI_InvalidName" xml:space="preserve"><value>The connection name cannot be empty or contain path separators or control characters.</value></data>
+  <data name="UI_InvalidServer" xml:space="preserve"><value>Enter a valid hostname or IPv4 address without a scheme or port.</value></data>
+  <data name="UI_InvalidPort" xml:space="preserve"><value>The UDP port must be an integer from 1 to 65535.</value></data>
+  <data name="UI_InvalidMtu" xml:space="preserve"><value>The MTU must be an integer from 576 to 1400.</value></data>
+  <data name="UI_InvalidIdentity" xml:space="preserve"><value>IKE identities cannot be empty and must match the selected name or IPv4 type. Do not prefix a name with @.</value></data>
+  <data name="UI_InvalidOptions" xml:space="preserve"><value>Invalid configuration. Check canonical split-route CIDRs, the number of IPv4 DNS servers, and the algorithm and timer ranges.</value></data>
+  <data name="UI_Connected" xml:space="preserve"><value>Connected</value></data>
+  <data name="UI_Connecting" xml:space="preserve"><value>Connecting</value></data>
+  <data name="UI_Disconnecting" xml:space="preserve"><value>Disconnecting</value></data>
+  <data name="UI_Disconnected" xml:space="preserve"><value>Disconnected</value></data>
+  <data name="UI_UnsavedTitle" xml:space="preserve"><value>Unsaved changes</value></data>
+  <data name="UI_UnsavedBody" xml:space="preserve"><value>Switching connections or refreshing will discard the current edits.</value></data>
+  <data name="UI_DiscardChanges" xml:space="preserve"><value>Discard changes</value></data>
+  <data name="UI_KeepEditing" xml:space="preserve"><value>Keep editing</value></data>
+  <data name="UI_NewPskHelp" xml:space="preserve"><value>A new connection requires a PSK. It is encrypted using data protection for the current Windows user.</value></data>
+  <data name="UI_KeepPskHelp" xml:space="preserve"><value>Leave blank to retain the encrypted PSK. Enter a value only to replace it. Stored keys are never displayed.</value></data>
+  <data name="UI_ReadOnlySuffix" xml:space="preserve"><value> - read-only; disconnect and refresh to edit</value></data>
+  <data name="UI_UnsupportedProfile" xml:space="preserve"><value>This configuration format is unsupported. The connection was not modified. Check the version or manage it in Windows.</value></data>
+  <data name="UI_SaveChanges" xml:space="preserve"><value>Save changes</value></data>
+  <data name="UI_ProfileLoaded" xml:space="preserve"><value>Connection loaded. Saving changes does not connect the VPN.</value></data>
+  <data name="UI_NewProfileReady" xml:space="preserve"><value>Enter the connection details. Advanced options use compatible defaults.</value></data>
+  <data name="UI_DefaultsRestored" xml:space="preserve"><value>Advanced defaults restored. Identities and the key are unchanged. Save to apply.</value></data>
+  <data name="UI_VisibilityFailed" xml:space="preserve"><value>Connections loaded, but some legacy profiles could not be made visible in Windows Settings.</value></data>
+  <data name="UI_VisibilityDeferred" xml:space="preserve"><value>Active legacy profiles were not changed. Disconnect and refresh to update them.</value></data>
+  <data name="UI_ReadFailed" xml:space="preserve"><value>Could not read connections. Refresh and try again.</value></data>
+  <data name="UI_NameExists" xml:space="preserve"><value>A connection with this name already exists and was not overwritten. Choose another name.</value></data>
+  <data name="UI_ProfileChanged" xml:space="preserve"><value>The connection was changed or deleted elsewhere. Refresh and try again.</value></data>
+  <data name="UI_ProfileActive" xml:space="preserve"><value>The connection is active and was not modified. Disconnect it in Windows, then refresh.</value></data>
+  <data name="UI_InvalidPskLength" xml:space="preserve"><value>The PSK must contain 1-1024 bytes when encoded as UTF-8.</value></data>
+  <data name="UI_PskRequired" xml:space="preserve"><value>A new connection requires a pre-shared key.</value></data>
+  <data name="UI_SaveFailed" xml:space="preserve"><value>Could not save. The original connection was not deleted.</value></data>
+  <data name="UI_ProfilesRead" xml:space="preserve"><value>Loaded {0} SwanBridge connections.</value></data>
+  <data name="UI_WindowsRejected" xml:space="preserve"><value>Windows rejected the configuration. Status: {0}</value></data>
+  <data name="UI_SystemError" xml:space="preserve"><value>The operation failed. Windows error code: {0}</value></data>
+  <data name="UI_InvalidProfile" xml:space="preserve"><value>Invalid connection configuration. Check the profile or refresh and try again.</value></data>
+  <data name="ProviderEngineUnavailable" xml:space="preserve"><value>SB1001: The IKEv2 engine is not connected. No VPN tunnel was created.</value></data>
+  <data name="ProviderInvalidConfiguration" xml:space="preserve"><value>SB1002: Invalid SwanBridge connection configuration.</value></data>
+  <data name="ProviderInitializationFailed" xml:space="preserve"><value>SB2007: Native engine initialization failed before IKE authentication. See EngineLog.</value></data>
+  <data name="ProviderAuthenticationFailed" xml:space="preserve"><value>SB2002: PSK authentication or IPv4 Child SA establishment failed. See EngineLog.</value></data>
+  <data name="ProviderTransportFailed" xml:space="preserve"><value>SB2003: Could not attach the Windows VPN data channel.</value></data>
+  <data name="ProviderSetupFailed" xml:space="preserve"><value>SB2004: VPN setup failed. See ConnectStage and FailureDetail.</value></data>
+  <data name="ProviderMobikeFailed" xml:space="preserve"><value>SB3101: MOBIKE migration failed; reconnect is required.</value></data>
+  <data name="ProviderSaExpired" xml:space="preserve"><value>SB3001: IKE or Child SA expired; reconnect is required.</value></data>
+</root>

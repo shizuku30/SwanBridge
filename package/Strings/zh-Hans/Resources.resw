@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <data name="UI_ShowHelp" xml:space="preserve"><value>查看说明</value></data>
+  <data name="UI_HelpSuffix" xml:space="preserve"><value>：说明</value></data>
+  <data name="UI_InvalidChoice" xml:space="preserve"><value>请选择有效的配置值。</value></data>
+  <data name="UI_InvalidOption" xml:space="preserve"><value>无效的选项值。</value></data>
+  <data name="UI_CustomValue" xml:space="preserve"><value>自定义值：</value></data>
+  <data name="UI_IdentityType" xml:space="preserve"><value>身份类型</value></data>
+  <data name="UI_IdentityName" xml:space="preserve"><value>FQDN / 名称</value></data>
+  <data name="UI_IdentityIpv4" xml:space="preserve"><value>IPv4 地址</value></data>
+  <data name="UI_LocalIdentity" xml:space="preserve"><value>客户端身份 (Local ID)</value></data>
+  <data name="UI_RemoteIdentity" xml:space="preserve"><value>服务端身份 (Remote ID)</value></data>
+  <data name="UI_LocalIdentityHelp" xml:space="preserve"><value>必须与服务端的客户端身份策略匹配。名称类型填写原始名称，不加 @；PSK 不是此身份值。</value></data>
+  <data name="UI_RemoteIdentityHelp" xml:space="preserve"><value>这是预期的服务端 IKE 身份，可能与服务器公网地址不同；必须与服务端配置一致。建议按实际身份选择类型。</value></data>
+  <data name="UI_ConnectionList" xml:space="preserve"><value>连接列表</value></data>
+  <data name="UI_WindowsSettings" xml:space="preserve"><value>Windows VPN 设置</value></data>
+  <data name="UI_Connections" xml:space="preserve"><value>连接</value></data>
+  <data name="UI_NewConnection" xml:space="preserve"><value>新建连接</value></data>
+  <data name="UI_RefreshConnections" xml:space="preserve"><value>刷新连接列表</value></data>
+  <data name="UI_ProviderScope" xml:space="preserve"><value>SwanBridge 提供商的连接</value></data>
+  <data name="UI_Basic" xml:space="preserve"><value>基本</value></data>
+  <data name="UI_BasicTitle" xml:space="preserve"><value>连接与身份</value></data>
+  <data name="UI_BasicDescription" xml:space="preserve"><value>服务器地址用于建立网络连接；IKE 身份用于认证，二者不必相同。</value></data>
+  <data name="UI_ConnectionName" xml:space="preserve"><value>连接名称</value></data>
+  <data name="UI_ServerAddress" xml:space="preserve"><value>服务器地址</value></data>
+  <data name="UI_ServerHelp" xml:space="preserve"><value>填写主机名或 IPv4 地址，不含协议、路径或端口。当前仅支持 IKEv2 双向 PSK 认证。</value></data>
+  <data name="UI_Psk" xml:space="preserve"><value>预共享密钥 (PSK)</value></data>
+  <data name="UI_PskProtected" xml:space="preserve"><value>密钥使用当前 Windows 用户的数据保护机制加密保存。</value></data>
+  <data name="UI_Security" xml:space="preserve"><value>安全</value></data>
+  <data name="UI_SecurityTitle" xml:space="preserve"><value>IKE 与 IPsec</value></data>
+  <data name="UI_SecurityDescription" xml:space="preserve"><value>算法必须与服务端存在交集；更换算法不一定能提高兼容性。建议先保留已验证的默认组合。</value></data>
+  <data name="UI_IkeProposal" xml:space="preserve"><value>IKE 算法提议</value></data>
+  <data name="UI_IkeRecommended" xml:space="preserve"><value>AES-256 / SHA-256 / DH14 · 建议</value></data>
+  <data name="UI_IkeHelp" xml:space="preserve"><value>DH14 为 2048 位，DH15 为 3072 位。这里只提供明确支持的组合，不回退到 3DES 或 SHA-1。</value></data>
+  <data name="UI_EspProposal" xml:space="preserve"><value>ESP 算法提议</value></data>
+  <data name="UI_EspRecommended" xml:space="preserve"><value>AES-256 / SHA-256 · 建议</value></data>
+  <data name="UI_EspHelp" xml:space="preserve"><value>ESP 负责业务数据加密与完整性验证；当前不额外配置 Child SA 的 DH/PFS 组。</value></data>
+  <data name="UI_Fragmentation" xml:space="preserve"><value>IKE 消息分片</value></data>
+  <data name="UI_EnabledRecommended" xml:space="preserve"><value>启用 · 建议</value></data>
+  <data name="UI_Disabled" xml:space="preserve"><value>关闭</value></data>
+  <data name="UI_FragmentationHelp" xml:space="preserve"><value>双方支持时拆分较大的 IKE 消息，减少 NAT 或防火墙丢弃 IP 分片造成的连接失败。</value></data>
+  <data name="UI_Encapsulation" xml:space="preserve"><value>ESP 封装</value></data>
+  <data name="UI_ForcedUdp" xml:space="preserve"><value>强制 UDP / NAT-T</value></data>
+  <data name="UI_EncapsulationHelp" xml:space="preserve"><value>当前 Windows 数据通道仅支持 UDP 封装，不能切换到裸 ESP；该限制不会被界面选项绕过。</value></data>
+  <data name="UI_MobikeDisabled" xml:space="preserve"><value>关闭 · 保留原连接行为</value></data>
+  <data name="UI_MobikeEnabled" xml:space="preserve"><value>启用 · 服务端也须支持</value></data>
+  <data name="UI_MobikeHelp" xml:space="preserve"><value>双方协商成功后，在 IPv4 网络切换时更新现有 IKE/Child SA 与 UDP 通道，保留虚拟地址；不等于重新拨号。服务端须启用 MOBIKE，且新网络必须能访问同一 VPN 网关。</value></data>
+  <data name="UI_LifetimeTitle" xml:space="preserve"><value>保活与超时</value></data>
+  <data name="UI_LifetimeDescription" xml:space="preserve"><value>这些值是本端策略，不会自动复制服务端配置。DPD、NAT 保活与消息重传承担不同职责。</value></data>
+  <data name="UI_Dpd" xml:space="preserve"><value>DPD 空闲探测间隔</value></data>
+  <data name="UI_Seconds20Recommended" xml:space="preserve"><value>20 秒 · 建议</value></data>
+  <data name="UI_Seconds10" xml:space="preserve"><value>10 秒</value></data>
+  <data name="UI_Seconds30" xml:space="preserve"><value>30 秒</value></data>
+  <data name="UI_Seconds60" xml:space="preserve"><value>60 秒</value></data>
+  <data name="UI_DisableProbing" xml:space="preserve"><value>关闭主动探测</value></data>
+  <data name="UI_DpdHelp" xml:space="preserve"><value>仅在没有收到对端 IKE/ESP 流量的空闲期主动探测。关闭后，失活发现可能更慢。</value></data>
+  <data name="UI_KeepAlive" xml:space="preserve"><value>NAT 保活间隔</value></data>
+  <data name="UI_Seconds15Recommended" xml:space="preserve"><value>15 秒 · 建议</value></data>
+  <data name="UI_Seconds20" xml:space="preserve"><value>20 秒</value></data>
+  <data name="UI_KeepAliveHelp" xml:space="preserve"><value>维持 NAT 的 UDP 映射，不代表对端仍存活。过长可能被 NAT 回收，过短会增加空闲流量。</value></data>
+  <data name="UI_RetransmitTimeout" xml:space="preserve"><value>首次重传等待</value></data>
+  <data name="UI_Seconds1Default" xml:space="preserve"><value>1 秒 · 当前默认</value></data>
+  <data name="UI_Seconds2" xml:space="preserve"><value>2 秒</value></data>
+  <data name="UI_Seconds3" xml:space="preserve"><value>3 秒</value></data>
+  <data name="UI_Seconds5Latency" xml:space="preserve"><value>5 秒 · 高延迟网络</value></data>
+  <data name="UI_RetransmitTimeoutHelp" xml:space="preserve"><value>后续重传由 strongSwan 退避处理；这不是每次重传都使用相同等待时间。</value></data>
+  <data name="UI_RetransmitTries" xml:space="preserve"><value>消息重传次数</value></data>
+  <data name="UI_Tries3Default" xml:space="preserve"><value>3 次 · 当前默认</value></data>
+  <data name="UI_Tries4" xml:space="preserve"><value>4 次</value></data>
+  <data name="UI_Tries5" xml:space="preserve"><value>5 次</value></data>
+  <data name="UI_Tries6" xml:space="preserve"><value>6 次</value></data>
+  <data name="UI_Tries8" xml:space="preserve"><value>8 次</value></data>
+  <data name="UI_RetransmitTriesHelp" xml:space="preserve"><value>达到重传上限后当前请求会失败。建议先保留 3；网络丢包严重时可适当增加，但故障发现也会变慢。</value></data>
+  <data name="UI_KeyingTries" xml:space="preserve"><value>IKE 建连尝试次数</value></data>
+  <data name="UI_Tries1Default" xml:space="preserve"><value>1 次 · 当前默认</value></data>
+  <data name="UI_Tries2" xml:space="preserve"><value>2 次</value></data>
+  <data name="UI_Tries3" xml:space="preserve"><value>3 次</value></data>
+  <data name="UI_KeyingTriesHelp" xml:space="preserve"><value>一次连接操作中的 IKE 建连尝试仍受下方等待上限限制；不等于 Windows 断线后自动重新拨号。</value></data>
+  <data name="UI_ConnectTimeout" xml:space="preserve"><value>IKE 协商等待上限</value></data>
+  <data name="UI_Seconds25Default" xml:space="preserve"><value>25 秒 · 当前默认</value></data>
+  <data name="UI_Seconds90" xml:space="preserve"><value>90 秒</value></data>
+  <data name="UI_Seconds120" xml:space="preserve"><value>120 秒</value></data>
+  <data name="UI_ConnectTimeoutHelp" xml:space="preserve"><value>限制一次 IKE 协商的等待时间，不包含前置的主机名解析与凭据读取时间。</value></data>
+  <data name="UI_ChildLifetime" xml:space="preserve"><value>Child SA 硬寿命</value></data>
+  <data name="UI_Hours24Compatible" xml:space="preserve"><value>24 小时 · 当前兼容值</value></data>
+  <data name="UI_Hours1" xml:space="preserve"><value>1 小时</value></data>
+  <data name="UI_Hours4" xml:space="preserve"><value>4 小时</value></data>
+  <data name="UI_Hours8" xml:space="preserve"><value>8 小时</value></data>
+  <data name="UI_Hours48" xml:space="preserve"><value>48 小时</value></data>
+  <data name="UI_ChildLifetimeHelp" xml:space="preserve"><value>旧 ESP 密钥的最长使用时间。主动换钥会在此之前协商替代 SA；换钥失败且到期时不能继续使用旧密钥。</value></data>
+  <data name="UI_IkeRekey" xml:space="preserve"><value>IKE SA 主动换钥</value></data>
+  <data name="UI_Hours4Recommended" xml:space="preserve"><value>4 小时 · 建议</value></data>
+  <data name="UI_Hours24" xml:space="preserve"><value>24 小时</value></data>
+  <data name="UI_DisableInitiation" xml:space="preserve"><value>关闭主动发起</value></data>
+  <data name="UI_IkeRekeyHelp" xml:space="preserve"><value>使用 CREATE_CHILD_SA 更新 IKE 密钥并保留现有 Child SA，不是重新认证或重新拨号。关闭只是不主动发起，仍响应服务端换钥。当前不主动重新认证。</value></data>
+  <data name="UI_ChildRekey" xml:space="preserve"><value>Child SA 主动换钥时机</value></data>
+  <data name="UI_Lifetime90Recommended" xml:space="preserve"><value>硬寿命的 90% · 建议</value></data>
+  <data name="UI_Lifetime80" xml:space="preserve"><value>硬寿命的 80%</value></data>
+  <data name="UI_Lifetime95" xml:space="preserve"><value>硬寿命的 95%</value></data>
+  <data name="UI_ChildRekeyHelp" xml:space="preserve"><value>默认硬寿命为 24 小时时，在约 21.6 小时之前更新 ESP 密钥。换钥保留虚拟 IP、Windows 通道和路由，旧 SA 在替代密钥安装后清理。</value></data>
+  <data name="UI_RekeyJitter" xml:space="preserve"><value>换钥随机提前量</value></data>
+  <data name="UI_Jitter5Recommended" xml:space="preserve"><value>最多提前 5% · 建议</value></data>
+  <data name="UI_Jitter10" xml:space="preserve"><value>最多提前 10%</value></data>
+  <data name="UI_Jitter20" xml:space="preserve"><value>最多提前 20%</value></data>
+  <data name="UI_JitterNone" xml:space="preserve"><value>不随机提前</value></data>
+  <data name="UI_RekeyJitterHelp" xml:space="preserve"><value>从换钥时刻随机减去此比例，降低双方同时换钥的概率。只会提前，不会延后到硬寿命之后。</value></data>
+  <data name="UI_Network" xml:space="preserve"><value>网络</value></data>
+  <data name="UI_NetworkTitle" xml:space="preserve"><value>隧道与路由</value></data>
+  <data name="UI_NetworkDescription" xml:space="preserve"><value>当前隧道仅承载 IPv4。全隧道会丢弃公网 IPv6，分流不接管无关 IPv6。本应用没有系统级断网保护。</value></data>
+  <data name="UI_NatPort" xml:space="preserve"><value>服务端 NAT-T UDP 端口</value></data>
+  <data name="UI_NatPortHelp" xml:space="preserve"><value>标准值为 4500。只有服务端明确使用自定义 UDP 监听端口时才修改。</value></data>
+  <data name="UI_Mtu" xml:space="preserve"><value>隧道 MTU</value></data>
+  <data name="UI_MtuHelp" xml:space="preserve"><value>建议 1280，可配置范围 576–1400。较小值适合存在分片或路径 MTU 问题的网络。</value></data>
+  <data name="UI_RouteMode" xml:space="preserve"><value>IPv4 路由模式</value></data>
+  <data name="UI_FullTunnel" xml:space="preserve"><value>全隧道 · 当前默认</value></data>
+  <data name="UI_SplitTunnel" xml:space="preserve"><value>仅指定网段（分流）</value></data>
+  <data name="UI_SplitRoutes" xml:space="preserve"><value>进入 VPN 的网段</value></data>
+  <data name="UI_SplitRoutesHelp" xml:space="preserve"><value>分流时填写规范 IPv4 CIDR，每行一个，最多 32 条；具体范围还必须被服务端 Traffic Selector 允许。</value></data>
+  <data name="UI_ExcludeLocal" xml:space="preserve"><value>排除本地子网</value></data>
+  <data name="UI_Excluded" xml:space="preserve"><value>排除</value></data>
+  <data name="UI_NotExcluded" xml:space="preserve"><value>不排除</value></data>
+  <data name="UI_ExcludeLocalHelp" xml:space="preserve"><value>默认排除本地 LAN。若本地与远端网段重叠，需要检查具体路由优先级；关闭排除并不能消除所有地址冲突。</value></data>
+  <data name="UI_DnsMode" xml:space="preserve"><value>DNS 来源</value></data>
+  <data name="UI_ServerDns" xml:space="preserve"><value>服务端下发 · 建议</value></data>
+  <data name="UI_CustomIpv4Dns" xml:space="preserve"><value>自定义 IPv4 DNS</value></data>
+  <data name="UI_SystemDns" xml:space="preserve"><value>沿用系统 DNS</value></data>
+  <data name="UI_DnsModeHelp" xml:space="preserve"><value>默认采用服务端下发的 DNS；自定义模式使用下方 IPv4 地址。沿用系统 DNS 可能使查询在 VPN 外发送。</value></data>
+  <data name="UI_CustomDns" xml:space="preserve"><value>自定义 DNS</value></data>
+  <data name="UI_CustomDnsHelp" xml:space="preserve"><value>最多 4 个 IPv4 地址，以逗号或空格分隔。分流时会为配置的 DNS 加入 /32 隧道路由；沿用系统 DNS 可能使查询在 VPN 外发送。</value></data>
+  <data name="UI_CreateConnection" xml:space="preserve"><value>创建连接</value></data>
+  <data name="UI_ResetDefaults" xml:space="preserve"><value>恢复建议值</value></data>
+  <data name="UI_LoadingConnections" xml:space="preserve"><value>正在读取连接…</value></data>
+  <data name="UI_InvalidName" xml:space="preserve"><value>连接名称不能为空或含路径分隔符、控制字符。</value></data>
+  <data name="UI_InvalidServer" xml:space="preserve"><value>服务器地址必须是有效主机名或 IPv4 地址，不含协议和端口。</value></data>
+  <data name="UI_InvalidPort" xml:space="preserve"><value>UDP 端口必须是 1–65535 之间的整数。</value></data>
+  <data name="UI_InvalidMtu" xml:space="preserve"><value>MTU 必须是 576–1400 之间的整数。</value></data>
+  <data name="UI_InvalidIdentity" xml:space="preserve"><value>IKE 身份不能为空，且必须与所选的名称或 IPv4 类型一致。名称不要加 @。</value></data>
+  <data name="UI_InvalidOptions" xml:space="preserve"><value>配置无效：请检查分流 CIDR（必须为网络地址）、DNS IPv4 地址数量，以及算法和定时器范围。</value></data>
+  <data name="UI_Connected" xml:space="preserve"><value>已连接</value></data>
+  <data name="UI_Connecting" xml:space="preserve"><value>连接中</value></data>
+  <data name="UI_Disconnecting" xml:space="preserve"><value>断开中</value></data>
+  <data name="UI_Disconnected" xml:space="preserve"><value>未连接</value></data>
+  <data name="UI_UnsavedTitle" xml:space="preserve"><value>尚有未保存的修改</value></data>
+  <data name="UI_UnsavedBody" xml:space="preserve"><value>切换连接或刷新会丢弃当前编辑内容。</value></data>
+  <data name="UI_DiscardChanges" xml:space="preserve"><value>放弃修改</value></data>
+  <data name="UI_KeepEditing" xml:space="preserve"><value>继续编辑</value></data>
+  <data name="UI_NewPskHelp" xml:space="preserve"><value>新连接必须填写 PSK；密钥将使用当前 Windows 用户的数据保护机制加密保存。</value></data>
+  <data name="UI_KeepPskHelp" xml:space="preserve"><value>留空保留现有加密 PSK；只有需要更换密钥时才填写。已保存的密钥不会回显。</value></data>
+  <data name="UI_ReadOnlySuffix" xml:space="preserve"><value> · 配置只读，断开后刷新可编辑</value></data>
+  <data name="UI_UnsupportedProfile" xml:space="preserve"><value>此配置格式暂不支持，未修改连接。请检查版本或在 Windows 中管理。</value></data>
+  <data name="UI_SaveChanges" xml:space="preserve"><value>保存更改</value></data>
+  <data name="UI_ProfileLoaded" xml:space="preserve"><value>已加载所选连接。保存更改不会自动连接 VPN。</value></data>
+  <data name="UI_NewProfileReady" xml:space="preserve"><value>填写基本配置后创建连接；高级选项已预置兼容值。</value></data>
+  <data name="UI_DefaultsRestored" xml:space="preserve"><value>已恢复高级选项的建议值，身份和密钥未改变；保存后生效。</value></data>
+  <data name="UI_VisibilityFailed" xml:space="preserve"><value>列表已读取，但部分旧连接的系统可见性更新失败。</value></data>
+  <data name="UI_VisibilityDeferred" xml:space="preserve"><value>连接中的旧配置暂不更新；断开后刷新可继续。</value></data>
+  <data name="UI_ReadFailed" xml:space="preserve"><value>读取连接失败，请刷新重试。</value></data>
+  <data name="UI_NameExists" xml:space="preserve"><value>同名连接已存在，未覆盖原连接。请更换名称。</value></data>
+  <data name="UI_ProfileChanged" xml:space="preserve"><value>连接已被其他操作修改或删除，请刷新后重试。</value></data>
+  <data name="UI_ProfileActive" xml:space="preserve"><value>连接正在使用中，未修改配置。请先在 Windows 中断开并刷新。</value></data>
+  <data name="UI_InvalidPskLength" xml:space="preserve"><value>PSK 的 UTF-8 长度必须为 1–1024 字节。</value></data>
+  <data name="UI_PskRequired" xml:space="preserve"><value>新建连接必须填写预共享密钥。</value></data>
+  <data name="UI_SaveFailed" xml:space="preserve"><value>保存失败，原连接未被删除。</value></data>
+  <data name="UI_ProfilesRead" xml:space="preserve"><value>已读取 {0} 个 SwanBridge 连接。</value></data>
+  <data name="UI_WindowsRejected" xml:space="preserve"><value>Windows 未接受配置，状态码：{0}</value></data>
+  <data name="UI_SystemError" xml:space="preserve"><value>操作失败，Windows 错误代码：{0}</value></data>
+  <data name="UI_InvalidProfile" xml:space="preserve"><value>连接配置无效，请检查配置或刷新后重试。</value></data>
+  <data name="ProviderEngineUnavailable" xml:space="preserve"><value>SB1001：IKEv2 引擎未连接，未创建 VPN 隧道。</value></data>
+  <data name="ProviderInvalidConfiguration" xml:space="preserve"><value>SB1002：SwanBridge 连接配置无效。</value></data>
+  <data name="ProviderInitializationFailed" xml:space="preserve"><value>SB2007：原生引擎在 IKE 认证前初始化失败。请检查 EngineLog。</value></data>
+  <data name="ProviderAuthenticationFailed" xml:space="preserve"><value>SB2002：PSK 认证或 IPv4 Child SA 建立失败。请检查 EngineLog。</value></data>
+  <data name="ProviderTransportFailed" xml:space="preserve"><value>SB2003：无法接入 Windows VPN 数据通道。</value></data>
+  <data name="ProviderSetupFailed" xml:space="preserve"><value>SB2004：VPN 建立失败。请检查 ConnectStage 和 FailureDetail。</value></data>
+  <data name="ProviderMobikeFailed" xml:space="preserve"><value>SB3101：MOBIKE 迁移失败，需要重新连接。</value></data>
+  <data name="ProviderSaExpired" xml:space="preserve"><value>SB3001：IKE 或 Child SA 已失效，需要重新连接。</value></data>
+</root>

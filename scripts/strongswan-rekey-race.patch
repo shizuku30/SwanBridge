@@ -1,0 +1,64 @@
+--- a/src/libcharon/sa/child_sa_manager.c
++++ b/src/libcharon/sa/child_sa_manager.c
+@@ -217,30 +217,46 @@
+ 	ike_sa_t *ike_sa;
+ 	bool found = FALSE;
+ 
+-	ike_sa = charon->ike_sa_manager->checkout(charon->ike_sa_manager, id);
+-	id->destroy(id);
+-	if (ike_sa)
++	for (u_int attempt = 0; attempt < 2; attempt++)
+ 	{
+-		enumerator = ike_sa->create_child_sa_enumerator(ike_sa);
+-		while (enumerator->enumerate(enumerator, &current))
++		ike_sa = charon->ike_sa_manager->checkout(charon->ike_sa_manager, id);
++		id->destroy(id);
++		if (ike_sa)
+ 		{
+-			found = current->get_unique_id(current) == unique_id;
+-			if (found)
++			enumerator = ike_sa->create_child_sa_enumerator(ike_sa);
++			while (enumerator->enumerate(enumerator, &current))
+ 			{
+-				if (child_sa)
++				found = current->get_unique_id(current) == unique_id;
++				if (found)
+ 				{
+-					*child_sa = current;
++					if (child_sa)
++					{
++						*child_sa = current;
++					}
++					break;
+ 				}
+-				break;
+ 			}
++			enumerator->destroy(enumerator);
++			if (found)
++			{
++				return ike_sa;
++			}
++			charon->ike_sa_manager->checkin(charon->ike_sa_manager, ike_sa);
+ 		}
+-		enumerator->destroy(enumerator);
+-
+-		if (found)
++		if (attempt == 1)
++		{
++			break;
++		}
++		/* Rekey can move the CHILD_SA while checkout waits on the old IKE_SA. */
++		child_entry_t key = { .unique_id = unique_id }, *entry;
++		this->mutex->lock(this->mutex);
++		entry = this->ids->get(this->ids, &key);
++		id = entry ? entry->ike_id->clone(entry->ike_id) : NULL;
++		this->mutex->unlock(this->mutex);
++		if (!id)
+ 		{
+-			return ike_sa;
++			break;
+ 		}
+-		charon->ike_sa_manager->checkin(charon->ike_sa_manager, ike_sa);
+ 	}
+ 	return NULL;
+ }
