@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.png binary
+*.ico binary
+*.patch text eol=lf -whitespace
+*.sh text eol=lf

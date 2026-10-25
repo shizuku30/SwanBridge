@@ -1,0 +1,4 @@
+LIBRARY SwanBridge.Plugin.dll
+EXPORTS
+    DllGetActivationFactory PRIVATE
+    DllCanUnloadNow PRIVATE

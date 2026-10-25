@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E14B3BF5-7D32-4BB7-AE1C-BBCE8AD4B424}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+    <ProjectName>SwanBridge</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration"><ConfigurationType>Makefile</ConfigurationType></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup>
+    <NMakeBuildCommandLine>powershell.exe -NoProfile -ExecutionPolicy RemoteSigned -File "$(ProjectDir)scripts\Build.ps1"</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>$(NMakeBuildCommandLine)</NMakeReBuildCommandLine>
+    <NMakeOutput>$(ProjectDir)build\layout\SwanBridge.App.exe</NMakeOutput>
+    <NMakeIncludeSearchPath>$(ProjectDir)src;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClCompile Include="src\App.cpp" /><ClCompile Include="src\Plugin.cpp" /><ClCompile Include="src\Host.cpp" />
+    <ClCompile Include="tests\ContractTests.cpp" /><ClCompile Include="tests\ActivationProbe.cpp" />
+    <ClCompile Include="tests\CredentialProbe.cpp" />
+    <ClCompile Include="tests\EngineAbiProbe.cpp" />
+    <ClCompile Include="tests\ProfileConfigurationTests.cpp" />
+    <ClCompile Include="tests\LanguageObserverTests.cpp" />
+    <ClInclude Include="src\EngineContract.h" /><ClInclude Include="src\Diagnostics.h" />
+    <ClInclude Include="src\NativeEngine.h" /><ClInclude Include="src\engine\Engine.h" />
+    <ClInclude Include="src\ProfileConfiguration.h" /><ClInclude Include="src\engine\Policy.h" />
+    <ClInclude Include="src\ProfileEditorState.h" />
+    <ClInclude Include="src\ThemePolicy.h" />
+    <ClInclude Include="src\LanguagePolicy.h" /><ClInclude Include="src\UiResources.h" />
+    <None Include="package\Strings\en-US\Resources.resw" /><None Include="package\Strings\zh-Hans\Resources.resw" />
+    <None Include="tests\LocalizationTests.ps1" />
+    <None Include="src\engine\Engine.c" />
+    <None Include="package\AppxManifest.xml" /><None Include="scripts\Build.ps1" />
+    <None Include="src\App.rc" />
+    <None Include="package\Assets\SwanBridge.png" /><None Include="package\Assets\Source.md" />
+    <None Include="scripts\Generate-IconAssets.ps1" /><None Include="tests\IconAssetTests.ps1" />
+    <None Include="tests\UiStyleTests.ps1" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

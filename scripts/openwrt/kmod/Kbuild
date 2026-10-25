@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: GPL-2.0
+obj-m += xfrm_algo.o xfrm_user.o xfrm_ipcomp.o xfrm_interface.o
+obj-m += af_key.o
+xfrm_interface-y := xfrm_interface_core.o
+obj-m += tunnel4.o ah4.o esp4.o ipcomp.o xfrm4_tunnel.o
+obj-m += tunnel6.o ah6.o esp6.o ipcomp6.o xfrm6_tunnel.o
+obj-m += udp_tunnel.o
+udp_tunnel-y := udp_tunnel_core.o udp_tunnel_nic.o

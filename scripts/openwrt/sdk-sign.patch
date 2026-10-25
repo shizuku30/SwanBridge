@@ -1,0 +1,10 @@
+--- a/include/package-pack.mk
++++ b/include/package-pack.mk
+@@ -590,6 +590,7 @@
+ 	fi
+ 
+ 	$(FAKEROOT) $(STAGING_DIR_HOST)/bin/apk mkpkg \
++	  --sign-key "$(TOPDIR)/../signing/private-key.pem" \
+ 	  --info "name:$(1)$$(ABIV_$(1))" \
+ 	  --info "version:$(VERSION)" \
+ 	  $$(if $$(ABIV_$(1)),--info "tags:openwrt:abiversion=$$(ABIV_$(1))") \
