@@ -6,6 +6,7 @@
 
 **Standards-based IKEv2-PSK for Windows.**
 
+<a href="#build-from-source"><img src="https://img.shields.io/badge/version-v0.1.0.49-2E7D32" alt="Package version v0.1.0.49" /></a>
 <a href="#requirements"><img src="https://img.shields.io/badge/Windows-10%20%2F%2011-0078D4" alt="Windows 10 / 11" /></a>
 <a href="#build-from-source"><img src="https://img.shields.io/badge/C%2B%2B-20-00599C" alt="C++20" /></a>
 <a href="#how-it-works"><img src="https://img.shields.io/badge/UI-UWP-7A3E9D" alt="Native UWP" /></a>
@@ -29,7 +30,7 @@ authentication model.
 Built around strongSwan 6.1.0, it uses standard IKEv2/IPsec rather than a
 vendor-specific handshake. The Windows integration combines C++/WinRT, UWP and
 the Windows VPN data channel. No commercial VPN executables, libraries or
-drivers are reused. The current package version is **v0.1.0.49**.
+drivers are reused.
 
 ## Features
 
